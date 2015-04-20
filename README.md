@@ -1,11 +1,11 @@
-# Parsing Data 1 Csv In Csv Out 
- 
-##Learning Competencies 
+# Parsing Data 1 Csv In Csv Out
+
+##Learning Competencies
 
 * Map data in a file from one format to another using ruby
 * Choose the appropriate method to store data in a file.
- 
-##Summary 
+
+##Summary
 
  When two processes on a single computer or two computers across a network want to share information they have to pre-agree on a format for exchanging data.  A program running on my laptop can't directly access the memory of some program running on yours, so they translate their internal state to/from this intermediate format first.  XML, JSON, CSV, and YAML are all examples of text-based data exchange formats.
 
@@ -23,6 +23,9 @@ What if the contents of the CSV file was instead represented as objects in your 
 
 These next few steps will walk you through the core part of this process -- getting data out of the file and turning it into a bunch of objects you can manipulate in your program and then save them back to the file.
 
+##Testing
+Create tests for Person and PersonParser. There are at least some basic things you'll want to test.
+
 ##Releases
 
 ###Release 0 : Person and PersonParser
@@ -31,7 +34,7 @@ First, make sure you have a copy of the CSV file from the `people.csv` file.  It
 
 Create a `Person` class such that each row of the CSV file represents a particular instance of the `Person` class.  What attributes should a `Person` object have?
 
-Create a `PersonParser` class that is initialized with the name of a CSV file.  Then use Ruby's [built-in CSV class](http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html) to implement a `PersonParser#people` method that returns an `Array` of properly-parsed `Person`s, based on the data in the CSV file.  Say that three times fast.  
+Create a `PersonParser` class that is initialized with the name of a CSV file.  Then use Ruby's [built-in CSV class](http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html) to implement a `PersonParser#people` method that returns an `Array` of properly-parsed `Person`s, based on the data in the CSV file.  Say that three times fast.
 
 *Note: CSV is a "built-in" class, but you still need to `require` it at the top of your program.*
 
@@ -51,6 +54,7 @@ parser.add_person Person.new(...)
 parser.save
 ```
 Note: When you read and write to a file, you can choose a format (like "r" for read and "w" for write).  The CSV formats are the same as the [file formats](http://ruby-doc.org/core-1.9.3/IO.html).
+
 ###Release 2 :Translating from CSV-land to Ruby-land
 
 Because text-based data formats don't know anything about where your data is going to be used, there aren't easy ways to encode language-specific features into the format.  For example, the `people.csv` file has a `created_at` field.  In a CSV this is just a conveniently-formatted string, but in Ruby we might want it to be an instance of the `DateTime` class.
@@ -61,7 +65,7 @@ At the top of your Ruby program add the line
 require 'date'
 ```
 
-Instead of storing `Person#created_at` as a `String`, use the [DateTime.parse method](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-c-parse) to parse the `String` into an actual honest-to-goodness `DateTime` object. 
+Instead of storing `Person#created_at` as a `String`, use the [DateTime.parse method](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-c-parse) to parse the `String` into an actual honest-to-goodness `DateTime` object.
 
 
 <!-- ##Optimize Your Learning  -->
