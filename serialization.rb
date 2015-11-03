@@ -1,10 +1,5 @@
 require 'csv'
 
-class Person
-  # Look at the above CSV file
-  # What attributes should a Person object have?
-end
-
 class PersonParser
   attr_reader :file
 

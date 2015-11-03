@@ -1,3 +1,4 @@
+require_relative 'person'
 require_relative 'serialization'
 
 parser = PersonParser.new('people.csv')
