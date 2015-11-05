@@ -64,11 +64,6 @@ We can now take CSV data and turn it into Ruby objects which we can use in our p
 *Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File](http://ruby-doc.org/core-2.1.0/IO.html#method-c-new-label-IO+Open+Mode).
 
 
-<!-- ##Optimize Your Learning  -->
-
-##Resources
-
-* [built-in CSV class](http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html)
 
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.1.0/libdoc/csv/rdoc/CSV.html
 [technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby/
