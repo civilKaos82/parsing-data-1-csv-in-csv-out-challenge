@@ -26,13 +26,15 @@ One of these strategies is *[lazy initialization][wikipedia lazy initialization]
 The other strategy used is *[memoization][wikipedia memoization]*.  In this strategy we limit the number of times that we run an expensive operation by caching the result of the operation.  In the `PersonParser` class, the first time we call the `#people` method, we parse the file and store the result of the parsing in an instance variable.  Subsequent calls to the `#people` method return the value of the instance variable.
 
 
-##Releases
+## Releases
+### Release 0: Represent People as Ruby Objects
+We'll begin by creating a `Person` class; in our Ruby program, each instance of this class will represent a person.  Our person class should be designed to represent the data found in the file `people.csv`.  In other words, an instance our our `Person` class should have an id, a first name, a last name, etc.
 
-###Release 0 : Person and PersonParser
 
-First, make sure you have a copy of the CSV file from the `people.csv` file.  It contains a few hundred rows of random data about people.
 
-Create a `Person` class such that each row of the CSV file represents a particular instance of the `Person` class.  What attributes should a `Person` object have?
+
+
+
 
 Create a `PersonParser` class that is initialized with the name of a CSV file.  Then use Ruby's [built-in CSV class](http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html) to implement a `PersonParser#people` method that returns an `Array` of properly-parsed `Person`s, based on the data in the CSV file.  Say that three times fast.
 
