@@ -33,13 +33,15 @@ We'll begin by creating a `Person` class; in our Ruby program, each instance of 
 We'll need to write tests for our class.  What behaviors does our `Person` class need?  Let's be sure that we can ask an instance of the class for each of its attributes:  id, first_name, etc.
 
 
+### Release 1: Parsing from CSV to Ruby
+We now have a Ruby object that can hold the information contained in the `people.csv` file.  So, now we're going to actually build some `Person` objects based on the data in the file.
 
+We're presented with an unfinished `PersonParser` class.  One behavior that is missing is the parsing of a CSV file into `Person` objects.  Write out the method body for the private `#parse_people_objects_from_file` method.  This method should return an array of `Person` objects based on the data in the CSV file.  We won't call this method directly on the object, but it will be called from within the `#people` method.
 
+We need to test the behavior of our `PersonParser` class.  Given an instance of the class, when we call `#people` what should be returned?
 
+*Note:*  Remember that we will be using Ruby's CSV library for reading the contents of the CSV file.  The library is required in the file `people_parser.rb`.
 
-Create a `PersonParser` class that is initialized with the name of a CSV file.  Then use Ruby's [built-in CSV class](http://ruby-doc.org/stdlib-1.9.2/libdoc/csv/rdoc/CSV.html) to implement a `PersonParser#people` method that returns an `Array` of properly-parsed `Person`s, based on the data in the CSV file.  Say that three times fast.
-
-*Note: CSV is a "built-in" class, but you still need to `require` it at the top of your program.*
 
 ###Release 1 : Manipulating in Ruby, Saving to CSV
 
