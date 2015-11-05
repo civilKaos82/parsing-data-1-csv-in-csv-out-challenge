@@ -51,25 +51,19 @@ In our case, the `people.csv` file has a `created_at` field.  In the CSV file th
 *Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.
 
 
-
-
-
-###Release 1 : Manipulating in Ruby, Saving to CSV
-
-Create a `PersonParser#add_person` method which takes a new `Person` instance as its input and appends that instance to the parser's internal `@people` array.
-
-Next, create a `PersonParser#save` method which uses the CSV class to save the current state of the parser to a new CSV file.  For example
-
+### Release 3: Saving Ruby State to CSV
 ```ruby
-parser = PersonParser.new('people.csv')
+jane = Person.new(...)
+john = Person.new(...)
 
-parser.add_person Person.new(...)
-
-# This will now write to people.csv, but there will be
-# one more row, corresponding to the extra Person you just added
-parser.save
+parser = PersonParser.new('friends.csv')
+parser.save([jane, john])
 ```
-Note: When you read and write to a file, you can choose a format (like "r" for read and "w" for write).  The CSV formats are the same as the [file formats](http://ruby-doc.org/core-1.9.3/IO.html).
+*Figure 1*.  Creating people in ruby and saving their data to a CSV file.
+
+We can now take CSV data and turn it into Ruby objects which we can use in our programs.  Now we're going to take Ruby objects and save their state to a CSV file.  To do this, we want to instantiate a `PeopleParser` with the name of the file to which we want to write.  We can create a collection of `People` objects and then give them to the parser to save to the file.  (see Figure 1)
+
+*Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File](http://ruby-doc.org/core-2.1.0/IO.html#method-c-new-label-IO+Open+Mode).
 
 
 <!-- ##Optimize Your Learning  -->
