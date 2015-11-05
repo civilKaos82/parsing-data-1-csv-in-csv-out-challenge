@@ -64,6 +64,9 @@ We can now take CSV data and turn it into Ruby objects which we can use in our p
 *Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File](http://ruby-doc.org/core-2.1.0/IO.html#method-c-new-label-IO+Open+Mode).
 
 
+## Conclusion
+The overall goal of this challenge is to learn to manipulate Ruby objects and CSV as part of a single application. All the data we needed for our people was held in the CSV file, but it's all text lacks behavior.  By creating Ruby objects based on the data, we were able to more easily iterate over the people. This is a common pattern in software engineering: change the representation of data from Format A to Format B to make it easier to do X with it.
+
 
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.1.0/libdoc/csv/rdoc/CSV.html
 [technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby/
