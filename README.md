@@ -43,6 +43,17 @@ We need to test the behavior of our `PersonParser` class.  Given an instance of 
 *Note:*  Remember that we will be using Ruby's CSV library for reading the contents of the CSV file.  The library is required in the file `people_parser.rb`.
 
 
+### Release 2: Appropriate Data Types in Ruby
+In our CSV file everything is text.  That means everything comes into our Ruby application as strings.  Sometimes this is appropriate.  For example, names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into objects other than strings.
+
+In our case, the `people.csv` file has a `created_at` field.  In the CSV file this is just a conveniently-formatted string, but in Ruby we might want it to be an instance of the `DateTime` class.  Instead of storing the created at value as a string, use the [DateTime.parse method](http://www.ruby-doc.org/stdlib-2.1.0/libdoc/date/rdoc/DateTime.html#method-c-parse) to parse the value in the CSV file into a `DateTime` object.
+
+*Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.
+
+
+
+
+
 ###Release 1 : Manipulating in Ruby, Saving to CSV
 
 Create a `PersonParser#add_person` method which takes a new `Person` instance as its input and appends that instance to the parser's internal `@people` array.
@@ -59,18 +70,6 @@ parser.add_person Person.new(...)
 parser.save
 ```
 Note: When you read and write to a file, you can choose a format (like "r" for read and "w" for write).  The CSV formats are the same as the [file formats](http://ruby-doc.org/core-1.9.3/IO.html).
-
-###Release 2 :Translating from CSV-land to Ruby-land
-
-Because text-based data formats don't know anything about where your data is going to be used, there aren't easy ways to encode language-specific features into the format.  For example, the `people.csv` file has a `created_at` field.  In a CSV this is just a conveniently-formatted string, but in Ruby we might want it to be an instance of the `DateTime` class.
-
-At the top of your Ruby program add the line
-
-```ruby
-require 'date'
-```
-
-Instead of storing `Person#created_at` as a `String`, use the [DateTime.parse method](http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/DateTime.html#method-c-parse) to parse the `String` into an actual honest-to-goodness `DateTime` object.
 
 
 <!-- ##Optimize Your Learning  -->
