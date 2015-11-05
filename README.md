@@ -40,8 +40,6 @@ We're presented with an unfinished `PersonParser` class.  One behavior that is m
 
 We need to test the behavior of our `PersonParser` class.  Given an instance of the class, when we call `#people` what should be returned?
 
-*Note:*  Remember that we will be using Ruby's CSV library for reading the contents of the CSV file.  The library is required in the file `people_parser.rb`.
-
 
 ### Release 2: Appropriate Data Types in Ruby
 In our CSV file everything is text.  That means everything comes into our Ruby application as strings.  Sometimes this is appropriate.  For example, names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into objects other than strings.
