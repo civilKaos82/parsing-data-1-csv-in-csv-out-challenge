@@ -49,7 +49,13 @@ In our case, the `people.csv` file has a `created_at` field.  In the CSV file th
 *Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.
 
 
-### Release 3: Saving Ruby State to CSV
+### Release 3: Working with the Ruby Objects
+One of the advantages of loading the data from the CSV file into Ruby objects is that it becomes easier for us to filter the collection of people or to manipulate their attributes.  For example, we could order the people by first name.  Or, we could update a person's phone number.
+
+In the file `runner.rb` we parse the code found in `people.csv` into `Person` objects.  Then we filter the list of people to see which of them have phone numbers from area code 419.  What other filtering could we do to our collection of people in the runner file?  Update the runner file to display a couple additional sortings or filterings of the people.
+
+
+### Release 4: Saving Ruby State to CSV
 ```ruby
 jane = Person.new(...)
 john = Person.new(...)
