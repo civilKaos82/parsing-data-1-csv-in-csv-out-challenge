@@ -44,7 +44,7 @@ We need to test the behavior of our `PersonParser` class.  Given an instance of 
 ### Release 2: Appropriate Data Types in Ruby
 In our CSV file everything is text.  That means everything comes into our Ruby application as strings.  Sometimes this is appropriate.  For example, names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into objects other than strings.
 
-In our case, the `people.csv` file has a `created_at` field.  In the CSV file this is just a conveniently-formatted string, but in Ruby we might want it to be an instance of the `DateTime` class.  Instead of storing the created at value as a string, use the [DateTime.parse method](http://www.ruby-doc.org/stdlib-2.1.0/libdoc/date/rdoc/DateTime.html#method-c-parse) to parse the value in the CSV file into a `DateTime` object.
+In our case, the `people.csv` file has a `created_at` field.  In the CSV file this is just a conveniently-formatted string, but in Ruby we might want it to be an instance of the `DateTime` class.  Instead of storing the created at value as a string, use the [DateTime.parse method][] to parse the value in the CSV file into a `DateTime` object.
 
 *Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.
 
@@ -67,7 +67,7 @@ parser.save([jane, john])
 
 We can now take CSV data and turn it into Ruby objects which we can use in our programs.  Now we're going to take Ruby objects and save their state to a CSV file.  To do this, we want to instantiate a `PeopleParser` with the name of the file to which we want to write.  We can create a collection of `People` objects and then give them to the parser to save to the file.  (see Figure 1)
 
-*Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File](http://ruby-doc.org/core-2.1.0/IO.html#method-c-new-label-IO+Open+Mode).
+*Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File][ruby file modes].
 
 
 ### Release 5: Collect and Save Information
@@ -77,8 +77,9 @@ Now that we can write data to CSV, let's write a script that will allow us to cr
 ## Conclusion
 The overall goal of this challenge is to learn to manipulate Ruby objects and CSV as part of a single application. All the data we needed for our people was held in the CSV file, but it's all text lacks behavior.  By creating Ruby objects based on the data, we were able to more easily iterate over the people. This is a common pattern in software engineering: change the representation of data from Format A to Format B to make it easier to do X with it.
 
-
+[DateTime.parse method]: http://www.ruby-doc.org/stdlib-2.1.0/libdoc/date/rdoc/DateTime.html#method-c-parse
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.1.0/libdoc/csv/rdoc/CSV.html
+[ruby file modes]: http://ruby-doc.org/core-2.1.0/IO.html#method-c-new-label-IO+Open+Mode
 [technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby/
 [wikipedia csv]: https://en.wikipedia.org/wiki/Comma-separated_values
 [wikipedia lazy initialization]: https://en.wikipedia.org/wiki/Lazy_initialization
