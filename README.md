@@ -28,9 +28,9 @@ The other strategy used is *[memoization][wikipedia memoization]*.  In this stra
 
 ## Releases
 ### Release 0: Represent People as Ruby Objects
-We'll begin by creating a `Person` class; in our Ruby program, each instance of this class will represent a person.  Our person class should be designed to represent the data found in the file `people.csv`.  In other words, an instance our our `Person` class should have an id, a first name, a last name, etc.
+We'll begin by creating a `Person` class; in our Ruby program, each instance of this class will represent a person.  Our person class should be designed to represent the data found in the file `people.csv`.  In other words, an instance our our `Person` class should have a first name, a last name, etc.
 
-We'll need to write tests for our class.  What behaviors does our `Person` class need?  Let's be sure that we can ask an instance of the class for each of its attributes:  id, first_name, etc.
+We'll need to write tests for our class.  What behaviors does our `Person` class need?  Let's be sure that we can ask an instance of the class for each of its attributes:  first_name, last_name, etc.
 
 
 ### Release 1: Parsing from CSV to Ruby
