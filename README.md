@@ -75,7 +75,7 @@ Now that we can write data to CSV, let's write a script that will allow us to cr
 
 
 ## Conclusion
-The overall goal of this challenge is to learn to manipulate Ruby objects and CSV as part of a single application. All the data we needed for our people was held in the CSV file, but it's all text lacks behavior.  By creating Ruby objects based on the data, we were able to more easily iterate over the people. This is a common pattern in software engineering: change the representation of data from Format A to Format B to make it easier to do X with it.
+The overall goal of this challenge is to learn to manipulate Ruby objects and CSV as part of a single application. All the data we needed to represent people was held in a CSV file, but the CSV file is just text and lacks person-like behavior (e.g., returning a name).  By creating Ruby objects based on the data, we were able to create objects whose behaviors matched the needs of our application. This is a common pattern in software engineering: change the representation of data from Format A to Format B to make it easier to do X with it.
 
 [DateTime.parse method]: http://www.ruby-doc.org/stdlib-2.1.0/libdoc/date/rdoc/DateTime.html#method-c-parse
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.1.0/libdoc/csv/rdoc/CSV.html
