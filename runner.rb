@@ -9,5 +9,5 @@ people = parser.people
 # Get people with phone numbers in a certain area code
 puts "The following people have phone numbers from area code 419."
 
-people_with_area_code_419.select { |person| /\A1-419/.match person.phone }
-people_with_area_code_419.each { |person| puts "#{person.first_name person.last_name}" }
+people_with_area_code_419 = people.select { |person| /\A1-419/.match person.phone }
+people_with_area_code_419.each { |person| puts "#{person.first_name} #{person.last_name}" }
