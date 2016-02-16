@@ -21,7 +21,7 @@ Reading and writing CSV—or another format—can be a resource-intensive operat
 
 There are strategies to mitigate the costs of expensive operations like reading in a file.  Two of these are exhibited in the `PersonParser` class.
 
-One of these strategies is *[lazy initialization][wikipedia lazy initialization]*.  With this strategy, we delay executing the costly operation until we absolutely need to. The `PersonParser` class is set up so that when we create a new instance of the class, we specify in which CSV file the data can be found.  But, we don't parse the file until we call the `#people` method, which returns a collection of `Person` objects based on the data in the file.
+One of these strategies is *[lazy initialization][wikipedia lazy initialization]*.  With this strategy, we delay executing a costly operation until we absolutely need to do it. The `PersonParser` class translates the data in a CSV file to Ruby `Person` objects.  When we create a new instance of the class, we specify in which CSV file the data can be found, but we don't parse the file right away.   We wait to do the expensive file reading operation until we actually need the Ruby objects and call the `#people` method, which returns a collection of `Person` objects based on the data in the file.  
 
 The other strategy used is *[memoization][wikipedia memoization]*.  In this strategy we limit the number of times that we run an expensive operation by caching the result of the operation.  In the `PersonParser` class, the first time we call the `#people` method, we parse the file and store the result of the parsing in an instance variable.  Subsequent calls to the `#people` method return the value of the instance variable.
 
