@@ -31,7 +31,7 @@ class PersonParser
 
   private
   def parse_people_objects_from_file
-    # Returs an array of Person objects
+    # Returns an array of Person objects
     # based on the data in the csv file.
   end
 end
