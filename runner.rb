@@ -2,8 +2,7 @@ require_relative 'person'
 require_relative 'person_parser'
 
 # Parse the data in the csv file into ruby objects
-parser = PersonParser.new('people.csv')
-people = parser.people
+people = PersonParser.parse('people.csv')
 
 
 # Get people with phone numbers in a certain area code
