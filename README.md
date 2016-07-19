@@ -65,7 +65,7 @@ parser.save([jane, john])
 ```
 *Figure 1*.  Creating people in ruby and saving their data to a CSV file.
 
-We can now take CSV data and turn it into Ruby objects which we can use in our programs.  Now we're going to take Ruby objects and save their state to a CSV file.  To do this, we want to instantiate a `PeopleParser` with the name of the file to which we want to write.  We can create a collection of `People` objects and then give them to the parser to save to the file.  (see Figure 1)
+We can now take CSV data and turn it into Ruby objects which we can use in our programs.  Now we're going to take Ruby objects and save their state to a CSV file.  To do this, we want to instantiate a `PersonParser` with the name of the file to which we want to write.  We can create a collection of `People` objects and then give them to the parser to save to the file.  (see Figure 1)
 
 *Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File][ruby file modes].
 
