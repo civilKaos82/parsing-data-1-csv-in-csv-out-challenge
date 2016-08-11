@@ -60,7 +60,7 @@ We can parse CSV data into Ruby objects which we can use in our programs.  Now w
 
 
 ### Release 5: Collect and Save Information
-Now that we can write data to CSV, let's write a script that will allow us to create a sort of CSV address book.  We'll enter people's names, phone numbers, etc. and then save the data to a CSV file.  Let's modify the runner file so that when it runs, we're prompted to enter information.  We'll enter the data for as many people as we want.  And then, once we're done making entries, the data we've entered will be written to a CSV file.
+Now that we can write data to CSV, let's write a script that will allow us to create a CSV address book based on user input.  We'll enter people's names, phone numbers, etc. and then save the data to a CSV file.  Let's modify the runner file so that when it runs, we're prompted to enter information.  We'll enter the data for as many people as we want.  And then, once we're done making entries, the data we've entered will be written to a CSV file.
 
 
 ## Conclusion
