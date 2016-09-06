@@ -40,9 +40,14 @@ In `people.csv` the date and time a person was born is saved in the `born_at` fi
 
 
 ### Release 3: Working with the Ruby Objects
+![runner animation](readme-assets/runner_animation.gif)  
+*Figure 1*.  Filtering the ruby objects created from the CSV file.
+
 One of the advantages of loading the data from the CSV file into Ruby objects is that it becomes easier for us to filter the collection of people or to manipulate their attributes.  For example, we could order the people by first name.  Or, we could update a person's phone number.
 
-In the file `runner.rb` we parse the code found in `people.csv` into `Person` objects.  Then we filter the list of people to see which of them have phone numbers from area code 419.  What other filtering could we do to our collection of people in the runner file?  Update the runner file to display a couple additional sortings or filterings of the people.
+Read through `runner.rb`. We want our program to allow users to filter people using different commands: filtering people from a specific area code, with a specific last name, or with an e-mail address from a specific domain.  When we're done, the program should operate similar to the example in Figure 1.
+
+Begin by completing the feature for searching for people by area code.  Run the program and follow the error messages (Hint:  we'll be adding to our `Person` class).  Once users can search for people by area code, implement the other two features:  searching by last name and by e-mail domain.  Then think up and add another feature of our own.
 
 
 ### Release 4: Saving Ruby State to CSV
