@@ -1,12 +1,32 @@
 require_relative 'person'
 require_relative 'person_parser'
 
-# Parse the data in the csv file into ruby objects
-people = PersonParser.parse('people.csv')
+
+if ARGV.any?
+  # Parse the data in the csv file into ruby objects
+  people = PersonParser.parse('people.csv')
 
 
-# Get people with phone numbers in a certain area code
-puts "The following people have phone numbers from area code 419."
+  # Parse the command line arguments
+  command = ARGV.first
+  options = ARGV[1..-1]
 
-people_with_area_code_419 = people.select { |person| person.area_code?("419") }
-people_with_area_code_419.each { |person| puts person.full_name }
+
+  case command
+  when "area code"
+    then
+      area_code = options.first
+      people_in_area_code = people.select { |person| person.area_code?(area_code) }
+
+      puts "The following people have phone numbers from area code #{area_code}."
+      people_in_area_code.each { |person| puts person.full_name }
+  when "last name"
+    then
+      # Implement search by last name (e.g., "Smith").
+  when "email domain"
+    then
+      # Implement search by email domain (e.g., "gmail.com").
+  else
+    puts "Unsupported command '#{command}'."
+  end
+end
