@@ -32,11 +32,11 @@ We need to test the behavior of our `PersonParser` module.  Given a CSV file wit
 
 
 ### Release 2: Appropriate Data Types in Ruby
-In our CSV file everything is text.  That means everything comes into our Ruby application as strings.  Sometimes this is appropriate.  For example, names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into objects other than strings.
+In our CSV file everything is text.  That means everything comes into our Ruby application as a string.  Sometimes this is appropriate.  Names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into a different type of object.
 
-In our case, the `people.csv` file has a `created_at` field.  In the CSV file this is just a conveniently-formatted string, but in Ruby we might want it to be an instance of the `DateTime` class.  Instead of storing the created at value as a string, use the [DateTime.parse method][] to parse the value in the CSV file into a `DateTime` object.
+In `people.csv` the date and time a person was born is saved in the `born_at` field.  In the CSV file this is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes specifically built for representing dates and times.  When we parse our CSV file into `Person` objects, ensure that the `born_at` attribute is a `DateTime` object, not a string.  Two options for doing this are using a CSV converter to make the conversion while reading the file and using the [DateTime.parse method][] to parse the value in the CSV file into a `DateTime` object.
 
-*Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.
+*Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.  
 
 
 ### Release 3: Working with the Ruby Objects
