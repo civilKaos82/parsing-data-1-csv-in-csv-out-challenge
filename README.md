@@ -20,13 +20,13 @@ We'll use this CSV library to both read and write CSV files.  Take time to read 
 ### Release 0: Represent People as Ruby Objects
 We'll begin by creating a `Person` class; in our Ruby program, each instance of this class will represent a person.  Our person class should be designed to represent the data found in the file `people.csv`.  In other words, an instance of our `Person` class should have a first name, a last name, etc.
 
-We'll need to write tests for our class.  What behaviors does our `Person` class need?  Let's be sure that we can ask an instance of the class for each of its attributes:  first name, last name, etc.
+We'll need to write tests for our class.  What behaviors does our `Person` class need?  To start, let's ensure that we can ask an instance of the class for each of its attributes:  first name, last name, etc.
 
 
 ### Release 1: Parsing from CSV to Ruby
-We now have a Ruby object that can hold the information contained in the `people.csv` file.  So, now we're going to actually build some `Person` objects based on the data in the file.
+We now have a custom Ruby class designed to represent a person.  In order to build a `Person` object, we need to supply some data:  the first name, last name, etc.  It doesn't matter where that data comes from.  The data could be supplied through a user interface, it could exist on a webpage, anywhere.  In this challenge, the data comes from a CSV file.
 
-We're presented with an unfinished `PersonParser` module.  Write out the method body for the `.parse` method.  This method should return an array of `Person` objects based on the data in a CSV file.
+We'll build a `PersonParser` module whose responsibility is to parse the text in a file into `Person` objects.  Write out the method body for the `.parse` method.  This method should convert each line in the file into a `Person` object and return those objects in an array.
 
 We need to test the behavior of our `PersonParser` module.  Given a CSV file with specific data in it, when we tell our parser to parse that file, what do we expect to be returned?
 
