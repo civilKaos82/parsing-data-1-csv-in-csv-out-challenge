@@ -34,7 +34,9 @@ We need to test the behavior of our `PersonParser` module.  Given a CSV file wit
 ### Release 2: Appropriate Data Types in Ruby
 In our CSV file everything is text.  That means everything comes into our Ruby application as a string.  Sometimes this is appropriate.  Names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into a different type of object.
 
-In `people.csv` the date and time a person was born is saved in the `born_at` field.  In the CSV file this is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes specifically built for representing dates and times.  When we parse our CSV file into `Person` objects, ensure that the `born_at` attribute is a `DateTime` object, not a string.  Two options for doing this are using a CSV converter to make the conversion while reading the file and using the [DateTime.parse method][] to parse the value in the CSV file into a `DateTime` object.
+In `people.csv` the date and time a person was born is saved in the `born_at` field.  In the CSV file this is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes like [DateTime][] specifically built for representing dates and times.  
+ 
+When we create `Person` objects from our CSV file, ensure that their `born_at` attributes are `DateTime` objects, not strings. We might want to check out the [DateTime.parse][] method.
 
 *Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.  
 
@@ -71,9 +73,10 @@ Now that we can write data to CSV, let's write a script that will allow us to cr
 ## Conclusion
 The overall goal of this challenge is to learn to manipulate Ruby objects and CSV as part of a single application. All the data we needed to represent people was held in a CSV file, but the CSV file is just text and lacks person-like behavior (e.g., returning a name).  By creating Ruby objects based on the data, we were able to create objects whose behaviors matched the needs of our application. This is a common pattern in software engineering: change the representation of data from Format A to Format B to make it easier to do X with it.
 
-[DateTime.parse method]: http://www.ruby-doc.org/stdlib-2.1.0/libdoc/date/rdoc/DateTime.html#method-c-parse
-[ruby docs csv]: http://ruby-doc.org/stdlib-2.1.0/libdoc/csv/rdoc/CSV.html
-[ruby file modes]: http://ruby-doc.org/core-2.1.0/IO.html#method-c-new-label-IO+Open+Mode
+[DateTime]: https://ruby-doc.org/stdlib-2.2.0/libdoc/date/rdoc/DateTime.html
+[DateTime.parse]: http://www.ruby-doc.org/stdlib-2.2.0/libdoc/date/rdoc/DateTime.html#method-c-parse
+[ruby docs csv]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html
+[ruby file modes]: http://ruby-doc.org/core-2.2.0/IO.html#method-c-new-label-IO+Open+Mode
 [technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby/
 [wikipedia csv]: https://en.wikipedia.org/wiki/Comma-separated_values
 [wikipedia lazy initialization]: https://en.wikipedia.org/wiki/Lazy_initialization
