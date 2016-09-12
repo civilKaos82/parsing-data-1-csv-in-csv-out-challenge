@@ -26,6 +26,9 @@ if ARGV.any?
   when "email domain"
     then
       # Implement search by email domain (e.g., "gmail.com").
+  when "born after"
+    then
+      # Implement search for people born after a given year (e.g., "1980")
   else
     puts "Unsupported command '#{command}'."
   end
