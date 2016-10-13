@@ -11,9 +11,13 @@ In this challenge, we'll use [CSV][wikipedia csv] as our format for storing data
 
 
 ### Ruby's CSV Library
-Ruby provides a library for working with CSV files (see [Ruby docs][ruby docs csv]).  It is part of Ruby's Standard Library, so we always have access to it.  However, as it's not part of Ruby's Core, it's not automatically loaded for us when our programs run.  We need to explicitly require it (see the top of the file `person_parser.rb`).
+Ruby provides a library for working with CSV files (see [Ruby docs][ruby docs csv]).  It is part of Ruby's Standard Library, so we always have access to it.  However, it's not a part of Ruby's Core, so it's not automatically loaded for us when our programs run.  We need to explicitly require it.  This is done for us at the top of the `person_parser.rb` file.
 
-We'll use this CSV library to both read and write CSV files.  Take time to read through the Ruby docs on the class.  Also, the blog post *[Parsing CSV with Ruby][technical pickles csv]* might prove helpful in understanding some of the options that we can specify when reading a CSV file (e.g., specifying that the CSV file contains a row of headers).
+We'll use this CSV library to both read and write CSV files.  The library provides the [`CSV.foreach`][docs foreach] method as the "primary interface for reading CSV files" and the [`CSV.open`][docs open] method as the "primary interface for writing a CSV file."
+
+When we read a CSV file, the default behavior for `CSV.foreach` is to convert each row in the file to an array of strings.  However, we can change that behavior by specifying different options.  For example, specifying that our CSV file contains a header row changes the data structure used to represent each row from an array to a [`CSV::Row`][ruby docs csv row] object.  For an overview of these options, read the blog post *[Parsing CSV with Ruby][technical pickles csv]*.
+
+*Note:*  The blog post explains these options using the method `CSV.new`, but they are the same when using `CSV.foreach`.
 
 
 ## Releases
@@ -77,7 +81,10 @@ The overall goal of this challenge is to learn to manipulate Ruby objects and CS
 
 [DateTime]: https://ruby-doc.org/stdlib-2.2.0/libdoc/date/rdoc/DateTime.html
 [DateTime.parse]: http://www.ruby-doc.org/stdlib-2.2.0/libdoc/date/rdoc/DateTime.html#method-c-parse
+[docs foreach]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html#method-c-foreach
+[docs open]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html#method-c-open
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html
+[ruby docs csv row]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV/Row.html
 [ruby file modes]: http://ruby-doc.org/core-2.2.0/IO.html#method-c-new-label-IO+Open+Mode
 [technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby/
 [wikipedia csv]: https://en.wikipedia.org/wiki/Comma-separated_values
