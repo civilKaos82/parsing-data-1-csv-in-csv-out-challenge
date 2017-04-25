@@ -86,7 +86,7 @@ The overall goal of this challenge is to learn to manipulate Ruby objects and CS
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html
 [ruby docs csv row]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV/Row.html
 [ruby file modes]: http://ruby-doc.org/core-2.2.0/IO.html#method-c-new-label-IO+Open+Mode
-[technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby/
+[technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby
 [wikipedia csv]: https://en.wikipedia.org/wiki/Comma-separated_values
 [wikipedia lazy initialization]: https://en.wikipedia.org/wiki/Lazy_initialization
 [wikipedia memoization]: https://en.wikipedia.org/wiki/Memoization
