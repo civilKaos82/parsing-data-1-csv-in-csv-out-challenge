@@ -1,23 +1,22 @@
 # Parsing Data: CSV to Ruby to CSV
 
 ## Summary
-When we run our applications, Ruby objects are created that exist in our computer's memory.  These objects have state, or information, associated with them.  In-memory state is lost when our application ends, so if we want to save this state, we need to record it somewhere.
+In this challenge we'll begin to explore *[persistence][]*, which allows the *state* of our applications—their data—to live on after our applications are done running.  See, as a program runs, Ruby creates objects that exist only in our computer's memory.  And when the application ends, that in-memory data is lost.  To save the state of our applications, we need to store the data somewhere more permanent than the computer's memory.
 
-In addition to saving the state of our programs for ourselves, we sometimes want to share this information with other systems or programs.  To accomplish this, in addition to merely saving the data, we need to save it in a format that is both compatible with these other systems and easily transfered.
+For this challenge, we're going to use a text file as a data store.  We'll load data from a text file into a Ruby application.  We'll also write data from a Ruby application to a text file.
 
-One common approach to saving state in an exchangeable format is to translate the information to text.  XML, JSON, CSV, and YAML are all examples of text-based data exchange formats.
-
-In this challenge, we'll use [CSV][wikipedia csv] as our format for storing data.  We'll be representing people in Ruby as instances of the class `Person`.  We'll both build `Person` objects from data in a CSV file and also save the state of Ruby `Person` objects in a CSV file.
-
+### Encoding Data as Text
+There are a number of other commonly used formats for encoding data as text.  We'll be using [CSV][wikipedia csv] in this challenge.  Other examples are XML, JSON, and YAML.  Encoding data in one of these formats has some advantages.  First, these standard formats make our data easily transferable.  So, for example, our Ruby application can save data formatted as CSV and then a JavaScript application can load that CSV data.  Second, most languages provide libraries for reading and writing these formats.
 
 ### Ruby's CSV Library
-Ruby provides a library for working with CSV files (see [Ruby docs][ruby docs csv]).  It is part of Ruby's Standard Library, so we always have access to it.  However, it's not a part of Ruby's Core, so it's not automatically loaded for us when our programs run.  We need to explicitly require it.  This is done for us at the top of the `person_parser.rb` file.
+Ruby provides a `CSV` library which we'll use to read from and write to CSV files (see [Ruby docs][ruby docs csv]).  `CSV` is not automatically loaded when Ruby starts.  We need to explicitly require it (see `person_parser.rb`).
 
-We'll use this CSV library to both read and write CSV files.  The library provides the [`CSV.foreach`][docs foreach] method as the "primary interface for reading CSV files" and the [`CSV.open`][docs open] method as the "primary interface for writing a CSV file."
+In addition to learning about persistence and transferring data between formats, another goal of this challenge is to learn how to use a new library.  The `CSV` library will be unfamiliar to us.  But, we're going to learn how to use it.  How do we do that?  Reading documentation is a great starting point.  We can also experiment in IRB.  What else?  
 
-When we read a CSV file, the default behavior for `CSV.foreach` is to convert each row in the file to an array of strings.  However, we can change that behavior by specifying different options.  For example, specifying that our CSV file contains a header row changes the data structure used to represent each row from an array to a [`CSV::Row`][ruby docs csv row] object.  For an overview of these options, read the blog post *[Parsing CSV with Ruby][technical pickles csv]*.
 
-*Note:*  The blog post explains these options using the method `CSV.new`, but they are the same when using `CSV.foreach`.
+
+
+
 
 
 ## Releases
@@ -79,14 +78,9 @@ Now that we can write data to CSV, let's write a script that will allow us to cr
 ## Conclusion
 The overall goal of this challenge is to learn to manipulate Ruby objects and CSV as part of a single application. All the data we needed to represent people was held in a CSV file, but the CSV file is just text and lacks person-like behavior (e.g., returning a name).  By creating Ruby objects based on the data, we were able to create objects whose behaviors matched the needs of our application. This is a common pattern in software engineering: change the representation of data from Format A to Format B to make it easier to do X with it.
 
-[DateTime]: https://ruby-doc.org/stdlib-2.2.0/libdoc/date/rdoc/DateTime.html
-[DateTime.parse]: http://www.ruby-doc.org/stdlib-2.2.0/libdoc/date/rdoc/DateTime.html#method-c-parse
-[docs foreach]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html#method-c-foreach
-[docs open]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html#method-c-open
-[ruby docs csv]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV.html
-[ruby docs csv row]: http://ruby-doc.org/stdlib-2.2.0/libdoc/csv/rdoc/CSV/Row.html
-[ruby file modes]: http://ruby-doc.org/core-2.2.0/IO.html#method-c-new-label-IO+Open+Mode
-[technical pickles csv]: http://technicalpickles.com/posts/parsing-csv-with-ruby
+[DateTime]: https://ruby-doc.org/stdlib-2.4.0/libdoc/date/rdoc/DateTime.html
+[DateTime.parse]: http://www.ruby-doc.org/stdlib-2.4.0/libdoc/date/rdoc/DateTime.html#method-c-parse
+[persistence]: https://en.wikipedia.org/wiki/Persistence_(computer_science)
+[ruby docs csv]: http://ruby-doc.org/stdlib-2.4.0/libdoc/csv/rdoc/CSV.html
+[ruby file modes]: http://ruby-doc.org/core-2.4.0/IO.html#method-c-new-label-IO+Open+Mode
 [wikipedia csv]: https://en.wikipedia.org/wiki/Comma-separated_values
-[wikipedia lazy initialization]: https://en.wikipedia.org/wiki/Lazy_initialization
-[wikipedia memoization]: https://en.wikipedia.org/wiki/Memoization
