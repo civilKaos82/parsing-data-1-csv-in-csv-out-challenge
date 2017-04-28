@@ -14,37 +14,16 @@ Ruby provides a `CSV` library which we'll use to read from and write to CSV file
 In addition to learning about persistence and transferring data between formats, another goal of this challenge is to learn how to use a new library.  The `CSV` library will be unfamiliar to us.  But, we're going to learn how to use it.  How do we do that?  Reading documentation is a great starting point.  We can also experiment in IRB.  What else?  
 
 
-
-
-
-
-
 ## Releases
-### Release 0: Represent People as Ruby Objects
-We'll begin by creating a `Person` class; in our Ruby program, each instance of this class will represent a person.  Our person class should be designed to represent the data found in the file `people.csv`.  In other words, an instance of our `Person` class should have a first name, a last name, etc.
+### Release 0: Build Ruby Objects from CSV Data
+We're going to start by building Ruby objects from CSV data.  We'll build a `PersonParser` module.  This module will have the responsibility of parsing the data in a CSV file into `Person` objects.  Every line in the CSV file will be used to create an instance of the `Person` class (see `person.rb`).
 
-We'll need to write tests for our class.  What behaviors does our `Person` class need?  To start, let's ensure that we can ask an instance of the class for each of its attributes:  first name, last name, etc.
+Write out the method body for the `PersonParser.parse` method.  This method accepts one argument, the name of a CSV file (see `people.csv`).  It converts each line of data in the file into a `Person` object and returns those objects in an array.  Tests are provided in `spec/person_parser_spec.rb`.
 
-
-### Release 1: Parsing from CSV to Ruby
-We now have a custom Ruby class designed to represent a person.  In order to build a `Person` object, we need to supply some data:  the first name, last name, etc.  It doesn't matter where that data comes from.  The data could be supplied through a user interface, it could exist on a webpage, anywhere.  In this challenge, the data comes from a CSV file.
-
-We'll build a `PersonParser` module whose responsibility is to parse the text in a file into `Person` objects.  Write out the method body for the `.parse` method.  This method should convert each line in the file into a `Person` object and return those objects in an array.
-
-We need to test the behavior of our `PersonParser` module.  Given a CSV file with specific data in it, when we tell our parser to parse that file, what do we expect to be returned?
+*Note:*  In a CSV file everything is text, so everything comes into Ruby as a string.  Names, phone numbers, and e-mail addresses are represented well as strings.  But, for other data there are more appropriate data types.  For example, in the CSV file the born at date and time is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes like [DateTime][] specifically built for representing dates and times.  The tests expect that appropriate data types are chosen.
 
 
-### Release 2: Appropriate Data Types in Ruby
-In our CSV file everything is text.  That means everything comes into our Ruby application as a string.  Sometimes this is appropriate.  Names, phone numbers, and e-mail addresses are represented well as strings.  In other cases, it can be beneficial to convert the CSV text into a different type of object.
-
-In `people.csv` the date and time a person was born is saved in the `born_at` field.  In the CSV file this is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes like [DateTime][] specifically built for representing dates and times.  
- 
-When we create `Person` objects from our CSV file, ensure that their `born_at` attributes are `DateTime` objects, not strings. We might want to check out the [DateTime.parse][] method.
-
-*Note:*  Like Ruby's CSV library, the `DateTime` class is not automatically loaded when our programs run.  We need to require it:  `require 'date'`.  
-
-
-### Release 3: Working with the Ruby Objects
+### Release 1: Working with the Ruby Objects
 ![runner animation](readme-assets/runner_animation.gif)  
 *Figure 1*.  Filtering the ruby objects created from the CSV file.
 
@@ -55,7 +34,7 @@ Read through `runner.rb`. We want our program to allow users to filter people us
 Begin by completing the feature for searching for people by area code.  Run the program and follow the error messages (Hint:  we'll be adding to our `Person` class).  Once users can search for people by area code, implement the other three features:  searching by last name, by e-mail domain, and by birth year.  Then think up and add another feature of our own.
 
 
-### Release 4: Saving Ruby State to CSV
+### Release 2: Saving Ruby State to CSV
 ```ruby
 jane = Person.new(...)
 john = Person.new(...)
@@ -71,7 +50,7 @@ We do not need to write tests for the writing behavior.
 *Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File][ruby file modes].
 
 
-### Release 5: Collect and Save Information
+### Release 3: Collect and Save Information
 Now that we can write data to CSV, let's write a script that will allow us to create a CSV address book based on user input.  We'll enter people's names, phone numbers, etc. and then save the data to a CSV file.  Let's modify the runner file so that when it runs, we're prompted to enter information.  We'll enter the data for as many people as we want.  And then, once we're done making entries, the data we've entered will be written to a CSV file.
 
 
