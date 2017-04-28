@@ -1,5 +1,5 @@
 require_relative '../person_parser'
 
-pending PersonParser do
+describe PersonParser do
 
 end
