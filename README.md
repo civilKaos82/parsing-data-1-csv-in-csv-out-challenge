@@ -11,7 +11,7 @@ Since we'll be saving data in a text file, we'll need to encode all of our data 
 ### Ruby's CSV Library
 Ruby provides a `CSV` library which we'll use to read from and write to CSV files (see [Ruby docs][ruby docs csv]).  `CSV` is not automatically loaded when Ruby starts.  We need to explicitly require it (see `person_parser.rb`).
 
-`CSV` provides a handful of different methods we can use to read a file.  And these methods allow us to pass options that customize how the data in the file is represented in Ruby.  So, how exactly do we use the library?  Well, in addition to learning about persistence and transforming data between formats, another goal of this challenge is to learn how to use a new library.  The `CSV` library will be unfamiliar to us.  But, we're going to learn how to use it.  How do we do that?  Reading documentation is a great starting point.  We can also experiment in IRB.  What else?  
+`CSV` provides a handful of different methods we can use to read a file.  And these methods allow us to pass options that customize how the data in the file is represented in Ruby.  So, how exactly do we use the library?  Well, in addition to learning about persistence and transforming data between formats, another goal of this challenge is to learn how to use a new library.  The `CSV` library will be unfamiliar to us.  But, we're going to learn how to use it.  How do we do that?  [Reading documentation][] is a great starting point.  We can also experiment in IRB.  What else?  
 
 
 ## Releases
@@ -49,6 +49,7 @@ The overall goal of this challenge is to learn to manipulate Ruby objects and CS
 [DateTime]: https://ruby-doc.org/stdlib-2.4.0/libdoc/date/rdoc/DateTime.html
 [DateTime.parse]: http://www.ruby-doc.org/stdlib-2.4.0/libdoc/date/rdoc/DateTime.html#method-c-parse
 [persistence]: https://en.wikipedia.org/wiki/Persistence_(computer_science)
+[reading documentation]: http://www.rubyletter.com/blog/2017/02/15/how-to-read-ruby-documentation.html
 [ruby docs csv]: http://ruby-doc.org/stdlib-2.4.0/libdoc/csv/rdoc/CSV.html
 [ruby file modes]: http://ruby-doc.org/core-2.4.0/IO.html#method-c-new-label-IO+Open+Mode
 [wikipedia csv]: https://en.wikipedia.org/wiki/Comma-separated_values
