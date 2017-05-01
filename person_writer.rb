@@ -1,4 +1,5 @@
 require 'csv'
+require_relative "person"
 
 module PersonWriter
   def self.write(filename, people)

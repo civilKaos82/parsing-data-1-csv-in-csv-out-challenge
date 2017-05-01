@@ -1,4 +1,5 @@
 require 'csv'
+require_relative "person"
 
 module PersonParser
   def self.parse(filename)

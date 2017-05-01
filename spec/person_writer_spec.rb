@@ -1,5 +1,4 @@
 require_relative "../person_writer"
-require_relative "../person"
 
 describe PersonWriter do
 
