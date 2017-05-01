@@ -11,14 +11,14 @@ There are a number of other commonly used formats for encoding data as text.  We
 ### Ruby's CSV Library
 Ruby provides a `CSV` library which we'll use to read from and write to CSV files (see [Ruby docs][ruby docs csv]).  `CSV` is not automatically loaded when Ruby starts.  We need to explicitly require it (see `person_parser.rb`).
 
-In addition to learning about persistence and transforming data between formats, another goal of this challenge is to learn how to use a new library.  The `CSV` library will be unfamiliar to us.  But, we're going to learn how to use it.  How do we do that?  Reading documentation is a great starting point.  We can also experiment in IRB.  What else?  
+`CSV` provides a handful of different methods we can use to read a file.  And these methods allow us to pass options that customize how the data in the file is represented in Ruby.  So, how do we use the library?  Well, in addition to learning about persistence and transforming data between formats, another goal of this challenge is to learn how to use a new library.  The `CSV` library will be unfamiliar to us.  But, we're going to learn how to use it.  How do we do that?  Reading documentation is a great starting point.  We can also experiment in IRB.  What else?  
 
 
 ## Releases
 ### Release 0: Build Ruby Objects from CSV Data
 We'll start by building Ruby objects from CSV data.  We'll build a `PersonParser` module with the responsibility of parsing the data in a CSV file into `Person` objects (see `people.csv` and `person.rb`).  Our module will have one method:  `.parse`.  The method accepts one argument, the name of a CSV file.  It converts each line of data in the file into a `Person` object and returns those objects in an array.  Write out the method body for `PersonParser.parse`; tests are provided in `spec/person_parser_spec.rb`.
 
-*Note:*  In a CSV file everything is text, so everything comes into Ruby as a string.  Names, phone numbers, and e-mail addresses are represented well as strings.  But, for other data there are more appropriate data types.  For example, in the CSV file the born at date and time is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes like [DateTime][] specifically built for representing dates and times.  The tests expect that appropriate data types are chosen.
+*Note:*  The data in a CSV file is represented as text, and it comes into Ruby as strings by default.  Names, phone numbers, and e-mail addresses are represented well as strings, but there are better options for other data.  A date and time, for example.  Ruby provides classes like [DateTime][] specifically built for representing them.  The tests expect that appropriate data types are chosen.
 
 
 ### Release 1: Working with the Ruby Objects
