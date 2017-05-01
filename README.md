@@ -34,19 +34,13 @@ Now that we can parse CSV data into Ruby objects, we're going to take Ruby objec
 *Note:* When we open a file in Ruby, we can choose a mode (e.g., `"r"` for read).  The modes for `CSV` are the same as the [modes available][ruby file modes] for `File`.  We'll need to select the appropriate mode.
 
 
-### Release 2: Working with the Ruby Objects
+### Release 2: Working with a Data Store in an Application
+Now that we can both read from a data store file and write to one, let's incorporate reading and writing to a file into an application.  We want to do two things.  One, we want to allow users to filter the list of people in `people.csv` to just those from a specific area code, with a specific last name, etc.  Two, we want to allow users to add data to `people.csv`.
+
+Read through the `runner.rb` file.  The first command, search by area code, is written for us—provided our parser works correctly; run the command following the example seen in Figure 2.  Then, continue to develope the runner until all the commands are functional, including being able to add data to the file.
+
 ![runner animation](readme-assets/runner_animation.gif)  
-*Figure 1*.  Filtering the ruby objects created from the CSV file.
-
-One of the advantages of loading the data from the CSV file into Ruby objects is that it becomes easier for us to filter the collection of people or to manipulate their attributes.  For example, we could order the people by first name.  Or, we could update a person's phone number.
-
-Read through `runner.rb`. We want our program to allow users to filter people using different commands: filtering people from a specific area code, with a specific last name, with an e-mail address from a specific domain, or born after a given year.  When we're done, the program should operate similar to the example in Figure 1.
-
-Begin by completing the feature for searching for people by area code.  Run the program and follow the error messages (Hint:  we'll be adding to our `Person` class).  Once users can search for people by area code, implement the other three features:  searching by last name, by e-mail domain, and by birth year.  Then think up and add another feature of our own.
-
-
-### Release 3: Collect and Save Information
-Now that we can write data to CSV, let's write a script that will allow us to create a CSV address book based on user input.  We'll enter people's names, phone numbers, etc. and then save the data to a CSV file.  Let's modify the runner file so that when it runs, we're prompted to enter information.  We'll enter the data for as many people as we want.  And then, once we're done making entries, the data we've entered will be written to a CSV file.
+*Figure 2*.  Filtering the ruby objects created from the CSV file.
 
 
 ## Conclusion
