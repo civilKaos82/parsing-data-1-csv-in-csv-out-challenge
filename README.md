@@ -21,18 +21,7 @@ We'll start by building Ruby objects from CSV data.  We'll build a `PersonParser
 *Note:*  The data in a CSV file is represented as text, and it comes into Ruby as strings by default.  Names, phone numbers, and e-mail addresses are represented well as strings, but there are better options for other data.  A date and time, for example.  Ruby provides classes like [DateTime][] specifically built for representing them.  The tests expect that appropriate data types are chosen.
 
 
-### Release 1: Working with the Ruby Objects
-![runner animation](readme-assets/runner_animation.gif)  
-*Figure 1*.  Filtering the ruby objects created from the CSV file.
-
-One of the advantages of loading the data from the CSV file into Ruby objects is that it becomes easier for us to filter the collection of people or to manipulate their attributes.  For example, we could order the people by first name.  Or, we could update a person's phone number.
-
-Read through `runner.rb`. We want our program to allow users to filter people using different commands: filtering people from a specific area code, with a specific last name, with an e-mail address from a specific domain, or born after a given year.  When we're done, the program should operate similar to the example in Figure 1.
-
-Begin by completing the feature for searching for people by area code.  Run the program and follow the error messages (Hint:  we'll be adding to our `Person` class).  Once users can search for people by area code, implement the other three features:  searching by last name, by e-mail domain, and by birth year.  Then think up and add another feature of our own.
-
-
-### Release 2: Saving Ruby State to CSV
+### Release 1: Saving Ruby State to CSV
 ```ruby
 jane = Person.new(...)
 john = Person.new(...)
@@ -46,6 +35,17 @@ We can parse CSV data into Ruby objects which we can use in our programs.  Now w
 We do not need to write tests for the writing behavior.
 
 *Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File][ruby file modes].
+
+
+### Release 2: Working with the Ruby Objects
+![runner animation](readme-assets/runner_animation.gif)  
+*Figure 1*.  Filtering the ruby objects created from the CSV file.
+
+One of the advantages of loading the data from the CSV file into Ruby objects is that it becomes easier for us to filter the collection of people or to manipulate their attributes.  For example, we could order the people by first name.  Or, we could update a person's phone number.
+
+Read through `runner.rb`. We want our program to allow users to filter people using different commands: filtering people from a specific area code, with a specific last name, with an e-mail address from a specific domain, or born after a given year.  When we're done, the program should operate similar to the example in Figure 1.
+
+Begin by completing the feature for searching for people by area code.  Run the program and follow the error messages (Hint:  we'll be adding to our `Person` class).  Once users can search for people by area code, implement the other three features:  searching by last name, by e-mail domain, and by birth year.  Then think up and add another feature of our own.
 
 
 ### Release 3: Collect and Save Information
