@@ -9,6 +9,10 @@ class Person
     @born_at    = args[:born_at]
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   def area_code
     phone[2..4]
   end

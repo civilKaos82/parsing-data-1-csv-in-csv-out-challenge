@@ -21,6 +21,10 @@ describe Person do
     expect(person.last_name).to eq "Leal"
   end
 
+  it "has a full name" do
+    expect(person.full_name).to eq "Jose Leal"
+  end
+
   it "has an email address" do
     expect(person.email).to eq "jose.leal@domain.com"
   end
