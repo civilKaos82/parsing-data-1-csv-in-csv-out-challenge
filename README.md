@@ -16,9 +16,7 @@ In addition to learning about persistence and transforming data between formats,
 
 ## Releases
 ### Release 0: Build Ruby Objects from CSV Data
-We're going to start by building Ruby objects from CSV data.  We'll build a `PersonParser` module.  This module will have the responsibility of parsing the data in a CSV file into `Person` objects.  Every line in the CSV file will be used to create an instance of the `Person` class (see `person.rb`).
-
-Write out the method body for the `PersonParser.parse` method.  This method accepts one argument, the name of a CSV file (see `people.csv`).  It converts each line of data in the file into a `Person` object and returns those objects in an array.  Tests are provided in `spec/person_parser_spec.rb`.
+We'll start by building Ruby objects from CSV data.  We'll build a `PersonParser` module with the responsibility of parsing the data in a CSV file into `Person` objects (see `people.csv` and `person.rb`).  Our module will have one method:  `.parse`.  The method accepts one argument, the name of a CSV file.  It converts each line of data in the file into a `Person` object and returns those objects in an array.  Write out the method body for `PersonParser.parse`; tests are provided in `spec/person_parser_spec.rb`.
 
 *Note:*  In a CSV file everything is text, so everything comes into Ruby as a string.  Names, phone numbers, and e-mail addresses are represented well as strings.  But, for other data there are more appropriate data types.  For example, in the CSV file the born at date and time is a string formatted `YYYY-MM-DD HH:MM:SS`.  While this string does represent a date and time, Ruby provides classes like [DateTime][] specifically built for representing dates and times.  The tests expect that appropriate data types are chosen.
 
