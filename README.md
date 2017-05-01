@@ -24,17 +24,14 @@ We'll start by building Ruby objects from CSV data.  We'll build a `PersonParser
 ### Release 1: Saving Ruby State to CSV
 ```ruby
 jane = Person.new(...)
-john = Person.new(...)
 
-PersonWriter.write('friends.csv', [jane, john])
+PersonWriter.append('some_file.csv', jane)
 ```
-*Figure 1*.  Creating people in ruby and saving their data to a CSV file.
+*Figure 1*.  Saving a person's data to a CSV file.
 
-We can parse CSV data into Ruby objects which we can use in our programs.  Now we're going to take Ruby objects and save their state to a CSV file.  To do this, we'll build a `PeopleWriter` module with a `.write` method.  We can create a collection of `People` objects and then tell the writer to write them to a file.  (see Figure 1)
+Now that we can parse CSV data into Ruby objects, we're going to take Ruby objects and save their state to a CSV file.  To do this, we'll build a `PeopleWriter` module with an `.append` method.  The method takes two arguments:  the name of a file and a `Person` object.  The method appends the person's data to the end of the file; tests are provided in `spec/person_parser_spec.rb`.
 
-We do not need to write tests for the writing behavior.
-
-*Note:* When we read and write to a file, we can choose a mode (like `"r"` for read and `"w"` for write).  The CSV modes are the same as the [modes available for File][ruby file modes].
+*Note:* When we open a file in Ruby, we can choose a mode (e.g., `"r"` for read).  The modes for `CSV` are the same as the [modes available][ruby file modes] for `File`.  We'll need to select the appropriate mode.
 
 
 ### Release 2: Working with the Ruby Objects
