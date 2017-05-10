@@ -3,13 +3,13 @@ require_relative 'person_parser'
 
 
 if ARGV.any?
-  # Parse the data in the csv file into ruby objects
-  people = PersonParser.parse('people.csv')
-
-
   # Parse the command line arguments
   command = ARGV.first
   options = ARGV[1..-1]
+
+
+  # Parse the data in the csv file into ruby objects unless we'll add to the file
+  people = PersonParser.parse('people.csv') unless command == "add"
 
 
   case command
@@ -29,6 +29,9 @@ if ARGV.any?
   when "born after"
     then
       # Implement search for people born after a given year (e.g., "1980")
+  when "add"
+    then
+      # Implement appending a person's data to the file
   else
     puts "Unsupported command '#{command}'."
   end
