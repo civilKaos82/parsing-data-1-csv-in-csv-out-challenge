@@ -6,7 +6,7 @@ In this challenge we'll begin to explore *[persistence][]*, which allows the *st
 For this challenge, we're going to use a text file as a data store.  We'll load data from a text file into a Ruby application.  We'll also write data from a Ruby application to a text file.
 
 ### Encoding Data as Text
-Since we'll be saving data in a text file, we'll need to encode all of our data as text.  There are a number of commonly used formats for encoding data as text.  We'll be using [CSV][wikipedia csv] in this challenge.  Other examples are XML, JSON, and YAML.  Encoding data in one of these formats has some advantages.  First, these standard formats make our data easily transferable.  So, for example, our Ruby application can save data formatted as CSV and then a JavaScript application can load that CSV data.  Second, most languages provide libraries for reading and writing these formats.
+Since we'll be saving data in a text file, we'll need to encode all of our data as text.  There are a number of commonly used formats for encoding data as text.  We'll be using [comma-separated values][wikipedia csv] (CSV).  Other examples are XML, JSON, and YAML.  Encoding data in one of these formats has some advantages.  First, these standard formats make our data easily transferable.  So, for example, our Ruby application can save data formatted as CSV and then a JavaScript application can load that CSV data.  Second, most languages provide libraries for reading and writing these formats.
 
 ### Ruby's CSV Library
 Ruby provides a `CSV` library which we'll use to read from and write to CSV files (see [Ruby docs][ruby docs csv]).  `CSV` is not automatically loaded when Ruby starts.  We need to explicitly require it (see `person_parser.rb`).
