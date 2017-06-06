@@ -1,4 +1,5 @@
 require_relative "../person_writer"
+require 'tempfile'
 
 describe PersonWriter do
 

@@ -1,4 +1,5 @@
 require_relative '../person_parser'
+require 'tempfile'
 
 describe PersonParser do
 
